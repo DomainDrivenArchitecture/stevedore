@@ -20,15 +20,15 @@
    correct line."
   ([str] `(bash-out ~str 0 ""))
   ([str exit err-msg]
-     `(let [r# (shell/bash ~str)]
-        (when-not (= ~exit (:exit r#))
-          (logging/errorf
-           "Unexpected exit status:\n:cmd %s\n:out %s\n:err %s"
-           ~str (:out r#) (:err r#)))
-        (logging/tracef "bash-out %s %s" ~str r#)
-        (is (= ~err-msg (:err r#)))
-        (is (= ~exit (:exit r#)))
-        (:out r#))))
+   `(let [r# (shell/bash ~str)]
+      (when-not (= ~exit (:exit r#))
+        (logging/errorf
+         "Unexpected exit status:\n:cmd %s\n:out %s\n:err %s"
+         ~str (:out r#) (:err r#)))
+      (logging/tracef "bash-out %s %s" ~str r#)
+      (is (= ~err-msg (:err r#)))
+      (is (= ~exit (:exit r#)))
+      (:out r#))))
 
 (defn strip-ws
   "strip extraneous whitespace so tests don't fail because of differences in
@@ -258,7 +258,7 @@
   (is (script= "([packages]=(columnchart))"
                (strip-ws (script {:packages ["columnchart"]}))))
   (is (script= "{ hash_set x q d; hash_set x p c;  }\necho ${x[p]}"
-       (script (do (var x {:p "c" :q "d"})
+       (script (do (var x {:q "d" :p "c"})
                    (println (aget x :p))))))
   (is (= "c\nd\n"
          (bash-out (script
