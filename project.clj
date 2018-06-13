@@ -1,4 +1,4 @@
-(defproject dda/stevedore "0.9.0-beta.1-SNAPSHOT"
+(defproject dda/stevedore "0.9.0-beta.1"
   :description "Embeds shell script in clojure"
   :url "http://palletops.com"
   :license {:name "Eclipse Public License"
