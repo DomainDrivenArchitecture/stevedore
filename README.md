@@ -1,5 +1,10 @@
 # pallet.stevedore
 
+With great respect to Hugo Duncan forked from: https://github.com/pallet/stevedore
+
+[![Clojars Project](https://img.shields.io/clojars/v/dda/stevedore.svg)](https://clojars.org/dda/stevedore)
+[![Build Status](https://travis-ci.org/DomainDrivenArchitecture/stevedore.svg?branch=develop)](https://travis-ci.org/DomainDrivenArchitecture/stevedore)
+
 An embedding of shell script in clojure.
 
 

@@ -1,3 +1,11 @@
+## 0.9.0-beta.1
+
+- adjust projectname
+
+- add build & artifact status
+
+- use clojure 1.9
+
 ## 0.8.0-beta.7
 
 - Use posix tests for greater/less comparisons
